@@ -1,5 +1,6 @@
 package com.ibm.project.service;
 
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,16 @@ public class ProjectService {
 	@Autowired
 	ProjectRepository projectRepository;
 
+
 	public void updateProject(@Valid Project project) {
 		projectRepository.save(project);
 		
 		
+	}
+
+	public String createProject(Project project) {
+		Project savedBug=projectRepository.save(project);
+		return project.getId();
 	}
 
 }

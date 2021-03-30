@@ -36,6 +36,7 @@ public class Project {
 	public void setManagerId(int managerId) {
 		this.managerId = managerId;
 	}
+}
 	
 
-}
+
