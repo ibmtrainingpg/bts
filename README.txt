@@ -1,2 +1,2 @@
-Bug Tracking Project has Bug-service,Project-service and Employee-service
-Abhishek Joined the team....
+Abhishek Joined the team.
+Indhu Joined..
