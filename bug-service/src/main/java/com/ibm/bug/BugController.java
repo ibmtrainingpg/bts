@@ -52,7 +52,7 @@ public class BugController {
 	
 	@PutMapping("/bug/{id}")
 	void updateBugStatus(@RequestBody @Valid Bug bug, BindingResult bindingResult,@PathVariable("id") String bugId ) {
-//		System.out.println(bugId);
+		System.out.println(bugId);
 		bug.setId(bugId);
 		bugService.updateBugStatus(bug);	
 	}
