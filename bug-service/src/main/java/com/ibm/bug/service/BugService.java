@@ -32,6 +32,12 @@ public class BugService {
 
 	public Optional<Bug> getBug(String bugId) {
 		return bugRepository.findById(bugId);
+	public void updateBugStatus(@Valid Bug bug) {
+		 bugRepository.save(bug);
+		
+		
+		
+		
 	}
 
 }
