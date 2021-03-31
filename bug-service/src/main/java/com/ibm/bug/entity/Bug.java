@@ -1,6 +1,7 @@
 package com.ibm.bug.entity;
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
 //import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -12,25 +13,30 @@ import com.ibm.bug.STATUS;
 import com.ibm.bug.TYPE;
 
 public class Bug {
-
-	@NotNull
-	PRIORITY priority;
-	@NotNull 
-	STATUS status;
-	@NotNull 
-	TYPE type;
 	
-	@NotNull
-	@Size(min=10, max=200, message = "Please Describe in less than 200 characters and not less than 10.")
-	private String title;
 	@Id
 	private String id;
 	@NotNull
+	private PRIORITY priority;
+	@NotNull
+	private TYPE type;
+	@NotNull
+	private STATUS status;
+	private String buildVersion;
+	@NotNull
+	@NotBlank
 	private String projectId;
-	@Size(min=10, max=1000, message = "Please Describe in less than 1000 characters and not less than 10.")
+	private Date submitOn;
+	private String module;
+	@NotBlank
+	@NotNull
+	@Size(min = 5, max = 1000, message = "Should be between 5 and 1000 characters")
 	private String description;
+	@NotBlank
+	@NotNull
+	@Size(min = 5, max = 200, message = "Should be between 5 and 200 characters")
+	private String title;
 	private String product;
-	private Date sumbitOn;
 	
 	public PRIORITY getPriority() {
 		return priority;
@@ -44,12 +50,6 @@ public class Bug {
 	public void setStatus(STATUS status) {
 		this.status = status;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
 	public String getId() {
 		return id;
 	}
@@ -62,6 +62,13 @@ public class Bug {
 	}
 	public void setType(TYPE type) {
 		this.type = type;
+		}
+	
+	public String getBuildVersion() {
+		return buildVersion;
+	}
+	public void setBuildVersion(String buildVersion) {
+		this.buildVersion = buildVersion;
 	}
 	public String getProjectId() {
 		return projectId;
@@ -69,11 +76,29 @@ public class Bug {
 	public void setProjectId(String projectId) {
 		this.projectId = projectId;
 	}
+	public Date getSubmitOn() {
+		return submitOn;
+	}
+	public void setSubmitOn(Date submitOn) {
+		this.submitOn = submitOn;
+	}
+	public String getModule() {
+		return module;
+	}
+	public void setModule(String module) {
+		this.module = module;
+	}
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
-		this.description = description;
+		this.description = description.trim();
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title.trim();
 	}
 	public String getProduct() {
 		return product;
@@ -81,15 +106,4 @@ public class Bug {
 	public void setProduct(String product) {
 		this.product = product;
 	}
-	public Date getSumbitOn() {
-		return sumbitOn;
-	}
-	public void setSumbitOn(Date sumbitOn) {
-		this.sumbitOn = sumbitOn;
-	}
-
-
-	
-	
-
 }
