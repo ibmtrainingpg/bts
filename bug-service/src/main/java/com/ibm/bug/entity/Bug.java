@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Id;
 
 import com.ibm.bug.PRIORITY;
 import com.ibm.bug.STATUS;
+import com.ibm.bug.TYPE;
 
 import java.util.Date;
 
@@ -22,7 +23,6 @@ import com.ibm.bug.TYPE;
 import com.ibm.bug.PRIORITY;
 
 public class Bug {
-	
 	@Id
 	private String id;
 	@NotNull
