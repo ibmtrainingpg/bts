@@ -35,9 +35,10 @@ public class BugService {
 	public void updateBugStatus(@Valid Bug bug) {
 		 bugRepository.save(bug);
 		
-		
-		
-		
+	}
+	public String createProject(@Valid Bug bug) {
+		Bug savedBug=bugRepository.save(bug);
+		return bug.getId();
 	}
 
 }
