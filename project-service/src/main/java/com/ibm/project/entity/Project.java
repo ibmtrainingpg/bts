@@ -1,13 +1,13 @@
 package com.ibm.project.entity;
 
-import java.util.List;
+import org.springframework.data.annotation.Id;
 
 public class Project {
+	@Id
 	private String id;
 	private String name;
 	private int developerId;
 	private int testerId;
-
 	private int managerId;
 
 	public String getId() {

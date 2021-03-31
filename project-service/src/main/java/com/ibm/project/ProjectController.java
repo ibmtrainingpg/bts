@@ -51,9 +51,6 @@ public class ProjectController {
 	Optional<Project> getProject(@PathVariable("id") String projectId) {
 		return projectService.getProject(projectId);
 	}
-	
-	
-	
 
 	@PostMapping("/project")
 	@ResponseStatus(code = HttpStatus.CREATED)
