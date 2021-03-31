@@ -16,6 +16,7 @@ public class ProjectService {
 	@Autowired
 	ProjectRepository projectRepository;
 
+
 	public void updateProject(@Valid Project project) {
 		projectRepository.save(project);
 	}
@@ -26,6 +27,11 @@ public class ProjectService {
 
 	public List<Project> getProjects() {
 		return projectRepository.findAll();
+	}
+
+	public String createProject(Project project) {
+		Project savedBug=projectRepository.save(project);
+		return project.getId();
 	}
 
 }
