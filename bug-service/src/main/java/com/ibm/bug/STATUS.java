@@ -1,0 +1,6 @@
+package com.ibm.bug;
+
+public enum STATUS {
+	OPEN,VERIFIED,CLOSED,COULD_NOT_REPRODUCE,NEED_MORE_INFO,FIXED
+
+}
