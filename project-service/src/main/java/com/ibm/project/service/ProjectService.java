@@ -1,5 +1,7 @@
 package com.ibm.project.service;
 
+import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -17,12 +19,18 @@ public class ProjectService {
 
 	public void updateProject(@Valid Project project) {
 		projectRepository.save(project);
-		
-		
+	}
+
+	public Optional<Project> getProject(String projectId) {
+		return projectRepository.findById(projectId);
+	}
+
+	public List<Project> getProjects() {
+		return projectRepository.findAll();
 	}
 
 	public String createProject(Project project) {
-		Project savedBug=projectRepository.save(project);
+		Project savedProject=projectRepository.save(project);
 		return project.getId();
 	}
 
