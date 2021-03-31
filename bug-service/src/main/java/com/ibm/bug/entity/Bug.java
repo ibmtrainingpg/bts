@@ -9,19 +9,23 @@ import org.springframework.data.annotation.Id;
 
 import com.ibm.bug.PRIORITY;
 import com.ibm.bug.STATUS;
+import com.ibm.bug.TYPE;
 
 public class Bug {
+
 	@NotNull
 	PRIORITY priority;
 	@NotNull 
 	STATUS status;
+	@NotNull 
+	TYPE type;
+	
 	@NotNull
 	@Size(min=10, max=200, message = "Please Describe in less than 200 characters and not less than 10.")
 	private String title;
 	@Id
 	private String id;
 	@NotNull
-	private String type;
 	private String projectId;
 	@Size(min=10, max=1000, message = "Please Describe in less than 1000 characters and not less than 10.")
 	private String description;
@@ -52,10 +56,11 @@ public class Bug {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getType() {
+	
+	public TYPE getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(TYPE type) {
 		this.type = type;
 	}
 	public String getProjectId() {
