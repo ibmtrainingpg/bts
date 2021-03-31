@@ -7,13 +7,11 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.project.entity.Project;
 import com.ibm.project.repo.ProjectRepository;
 
 @Service
-@Transactional
 public class ProjectService {
 	@Autowired
 	ProjectRepository projectRepository;
@@ -32,7 +30,7 @@ public class ProjectService {
 	}
 
 	public String createProject(Project project) {
-		Project savedBug=projectRepository.save(project);
+		Project savedProject=projectRepository.save(project);
 		return project.getId();
 	}
 
