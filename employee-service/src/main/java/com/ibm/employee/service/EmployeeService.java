@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.ibm.employee.entity.Employee;
 import com.ibm.employee.repo.EmployeeRepository;
 
@@ -49,4 +50,16 @@ public class EmployeeService {
 	public List<Employee> getEmployees() {
 		return employeeRepository.findAll();
 	}
+	
+	
+	// For the purpose of JUNIT testing
+	public EmployeeRepository getEmployeeRepository() {
+		return employeeRepository;
+	}
+
+	public void setEmployeeRepository(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
+	
+	
 }
