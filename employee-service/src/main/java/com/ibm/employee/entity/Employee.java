@@ -14,7 +14,6 @@ public class Employee {
 	@Email
 	private String email;
 	@NotNull
-	private int mobileNumber;
 	private String mobileNumber;
 	@NotNull
 	private ROLE role;
