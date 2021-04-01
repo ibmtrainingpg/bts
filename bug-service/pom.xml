@@ -11,9 +11,6 @@
 		<version>2.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ibm</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-demo1</name>
 	<description>Bug REST API</description>
 	<properties>
