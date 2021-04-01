@@ -3,11 +3,13 @@ package com.ibm.bug.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.net.ssl.SSLEngineResult.Status;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ibm.bug.STATUS;
 import com.ibm.bug.entity.Bug;
 import com.ibm.bug.repo.BugRepository;
 
@@ -36,8 +38,15 @@ public class BugService {
 		return bugRepository.findById(bugId);
 	}
 	
-	public void updateBugStatus(@Valid Bug bug) {
-		 bugRepository.save(bug);
+	/**
+	 * method to update the status of the code
+	 * @param bug
+	 * @returns updated bug status
+	 */
+	
+	public STATUS updateBugStatus(@Valid Bug bug) {
+		bugRepository.save(bug);
+		return bug.getStatus();
 		
 	}
 	public String createBug(@Valid Bug bug) {
