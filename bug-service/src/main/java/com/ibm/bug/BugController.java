@@ -59,10 +59,10 @@ public class BugController {
 	
 	@PostMapping("/bug")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	String createOrder(@RequestBody @Valid Bug bug, BindingResult bindingResult) {
+	String createBug(@RequestBody @Valid Bug bug, BindingResult bindingResult) {
 		validateModel(bindingResult);
 		System.out.println(bug);
-		return bugService.createProject(bug);
+		return bugService.createBug(bug);
 
 	}
 

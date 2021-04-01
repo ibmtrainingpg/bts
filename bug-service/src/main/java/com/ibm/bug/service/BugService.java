@@ -40,9 +40,17 @@ public class BugService {
 		 bugRepository.save(bug);
 		
 	}
-	public String createProject(@Valid Bug bug) {
+	public String createBug(@Valid Bug bug) {
 		Bug savedBug=bugRepository.save(bug);
 		return bug.getId();
+	}
+
+	public BugRepository getBugRepository() {
+		return bugRepository;
+	}
+
+	public void setBugRepository(BugRepository bugRepository) {
+		this.bugRepository = bugRepository;
 	}
 
 }
