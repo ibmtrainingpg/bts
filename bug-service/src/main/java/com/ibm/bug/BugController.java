@@ -32,7 +32,7 @@ public class BugController {
 	 */
 
 	@GetMapping("/bug")
-	List<Bug> getOrders() {
+	List<Bug> getBugs() {
 		return bugService.getBugs();
 
 	}
@@ -45,7 +45,7 @@ public class BugController {
 	 */
 
 	@GetMapping("/bug/{id}")
-	Optional<Bug> getOrder(@PathVariable("id") String bugId) {
+	Optional<Bug> getBug(@PathVariable("id") String bugId) {
 		return bugService.getBug(bugId);
 	}
 	
