@@ -14,6 +14,9 @@ import com.ibm.employee.repo.EmployeeRepository;
 public class EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
+
+	public void updateEmployeeDetails(@Valid Employee employee) {
+		employeeRepository.save(employee);
 	/**
 	 * 
 	 * @param employee

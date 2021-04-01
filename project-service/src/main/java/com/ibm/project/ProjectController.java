@@ -28,6 +28,7 @@ public class ProjectController {
 	
 	@PutMapping("/project/{id}")
 	void updateOrder(@RequestBody @Valid Project project, BindingResult bindingResult,@PathVariable("id") String projectId) {
+		validateModel(bindingResult);
 		System.out.println(projectId);
 		project.setId(projectId);
 		projectService.updateProject(project);

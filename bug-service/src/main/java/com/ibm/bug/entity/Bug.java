@@ -36,13 +36,6 @@ public class Bug {
 	private String title;
 	private String product;
 	
-	public TYPE getType() {
-		return type;
-	}
-	public void setType(TYPE type) {
-		this.type = type;
-	}
-
 	public PRIORITY getPriority() {
 		return priority;
 	}
@@ -61,6 +54,13 @@ public class Bug {
 	public void setId(String id) {
 		this.id = id;
 	}
+	public TYPE getType() {
+		return type;
+	}
+	public void setType(TYPE type) {
+		this.type = type;
+		}
+
 	public String getBuildVersion() {
 		return buildVersion;
 	}
