@@ -76,8 +76,8 @@ public class Bug {
 	public Date getSubmitOn() {
 		return submitOnDate;
 	}
-	public void setSubmitOn(Date submitOn) {
-		this.submitOnDate = submitOn;
+	public void setSubmitOn(Date submitOnDate) {
+		this.submitOnDate = submitOnDate;
 	}
 	public String getModule() {
 		return module;
