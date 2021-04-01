@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import com.ibm.bug.STATUS;
 import com.ibm.bug.entity.Bug;
 import com.ibm.bug.repo.BugRepository;
 
@@ -112,6 +113,7 @@ public class DummyBugRepository implements BugRepository {
 	@Override
 	public Bug save(Bug bug) {
 		bug.setId("24398t84gb32oi");
+		bug.setStatus(STATUS.VERIFIED);
 		return bug;
 	}
 
