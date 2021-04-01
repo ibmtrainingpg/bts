@@ -1,6 +1,8 @@
 package com.ibm.employee.entity;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 import com.ibm.employee.ROLE;
@@ -14,7 +16,9 @@ public class Employee {
 	@Email
 	private String email;
 	@NotNull
-	private String mobileNumber;
+	@Min(1000000000)
+	@Max(9999999999L)
+	private long mobileNumber;
 	@NotNull
 	private ROLE role;
 	
@@ -36,10 +40,10 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getMobileNumber() {
+	public long getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(String mobileNumber) {
+	public void setMobileNumber(long mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 	public ROLE getRole() {
