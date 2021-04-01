@@ -9,7 +9,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.4</version>
-		<relativePath /> 
+		<relativePath />
 	</parent>
 	<name>springboot-demo1</name>
 	<description>Bug REST API</description>
