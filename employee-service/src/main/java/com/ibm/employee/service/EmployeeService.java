@@ -17,6 +17,7 @@ public class EmployeeService {
 
 	public void updateEmployeeDetails(@Valid Employee employee) {
 		employeeRepository.save(employee);
+	}
 	/**
 	 * 
 	 * @param employee
@@ -25,7 +26,7 @@ public class EmployeeService {
 	public String createEmployee(@Valid Employee employee) {
 		Employee savedemployee=employeeRepository.save(employee);
 		return employee.getId();
-
+	}
 	public Optional<Employee> getEmployee(String employeeId) {
 		return employeeRepository.findById(employeeId);
 	}
