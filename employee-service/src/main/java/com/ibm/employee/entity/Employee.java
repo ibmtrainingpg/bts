@@ -1,17 +1,16 @@
 package com.ibm.employee.entity;
-
 import javax.validation.constraints.NotNull;
-
 import org.springframework.data.annotation.Id;
-
 import com.ibm.employee.ROLE;
 
 public class Employee {
 	@Id
 	private String id;
+	@NotNull
 	private String name;
 	@NotNull
 	private String email;
+	@NotNull
 	private int mobileNumber;
 	@NotNull
 	private ROLE role;
