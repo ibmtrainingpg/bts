@@ -47,11 +47,13 @@ public class BugService {
 		return bug.getStatus();
 		
 	}
+	
 	public String createBug(@Valid Bug bug) {
-		Bug savedBug=bugRepository.save(bug);
+		bugRepository.save(bug);
 		return bug.getId();
 	}
 
+	//For purpose of JUNIT testing
 	public BugRepository getBugRepository() {
 		return bugRepository;
 	}
