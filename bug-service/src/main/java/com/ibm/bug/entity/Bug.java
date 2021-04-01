@@ -1,26 +1,15 @@
 package com.ibm.bug.entity;
 import java.util.Date;
 
-//import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.springframework.data.annotation.Id;
-
-import com.ibm.bug.PRIORITY;
-import com.ibm.bug.STATUS;
-import com.ibm.bug.TYPE;
-
-import java.util.Date;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 import org.springframework.data.annotation.Id;
 
+import com.ibm.bug.PRIORITY;
 import com.ibm.bug.STATUS;
 import com.ibm.bug.TYPE;
-import com.ibm.bug.PRIORITY;
 
 public class Bug {
 	@Id
