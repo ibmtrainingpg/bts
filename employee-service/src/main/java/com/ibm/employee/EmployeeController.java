@@ -43,6 +43,7 @@ public class EmployeeController {
 	}
 
 
+
 	/**
 	 * 
 	 * @param employee
@@ -58,10 +59,17 @@ public class EmployeeController {
 	}
 	
 	
+	
 	@GetMapping("/employee")
 	List<Employee> getEmployees() {
 		return employeeService.getEmployees();
 	}
+	
+	/**
+	 * method to get details of specific employee
+	 * @param employeeId
+	 * @return zero or matching employee 
+	 */
 	
 	@GetMapping("/employee/{id}")
 	Optional<Employee> getBug(@PathVariable("id") String employeeId) {
