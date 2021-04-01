@@ -25,11 +25,6 @@ class BugServiceTest {
 		assertNotNull(bugId);
 	}
 
-//	@Test
-//	void testGetBug() {
-//		fail("Not yet implemented");
-//	}
-//
 	@Test
 	void testUpdateBugStatus() {
 		BugService bugService = new BugService();
@@ -40,10 +35,7 @@ class BugServiceTest {
 		assertNotNull(status);
 		assertEquals(STATUS.VERIFIED, status);
 	}
-//
-//	@Test
-//	void testCreateProject() {
-//		fail("Not yet implemented");
-//	}
+	
+	
 
 }
