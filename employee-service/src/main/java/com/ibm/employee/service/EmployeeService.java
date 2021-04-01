@@ -17,6 +17,7 @@ public class EmployeeService {
 
 	public void updateEmployeeDetails(@Valid Employee employee) {
 		employeeRepository.save(employee);
+	}
 	/**
 	 * 
 	 * @param employee
@@ -25,12 +26,14 @@ public class EmployeeService {
 	public String createEmployee(@Valid Employee employee) {
 		Employee savedemployee=employeeRepository.save(employee);
 		return employee.getId();
+	}
 
 	/**
 	 * service method to get details of the specific employee
 	 * @param employeeId
 	 * @return zero or matching employee details
 	 */
+	
 	public Optional<Employee> getEmployee(String employeeId) {
 		return employeeRepository.findById(employeeId);
 	}
