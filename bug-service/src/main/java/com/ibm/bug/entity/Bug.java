@@ -2,7 +2,6 @@ package com.ibm.bug.entity;
 import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
-//import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -25,7 +24,7 @@ public class Bug {
 	@NotNull
 	@NotBlank
 	private String projectId;
-	private Date submitOn;
+	private Date submitOnDate;
 	private String module;
 	@NotBlank
 	@NotNull
@@ -75,10 +74,10 @@ public class Bug {
 		this.projectId = projectId;
 	}
 	public Date getSubmitOn() {
-		return submitOn;
+		return submitOnDate;
 	}
-	public void setSubmitOn(Date submitOn) {
-		this.submitOn = submitOn;
+	public void setSubmitOn(Date submitOnDate) {
+		this.submitOnDate = submitOnDate;
 	}
 	public String getModule() {
 		return module;
