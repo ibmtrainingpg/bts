@@ -1,12 +1,24 @@
 package com.ibm.employee.service;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ibm.employee.entity.Employee;
 import com.ibm.employee.repo.EmployeeRepository;
 
 @Service
 public class EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
+	/**
+	 * 
+	 * @param employee
+	 * @return employee id
+	 */
+	public String createEmployee(@Valid Employee employee) {
+		Employee savedemployee=employeeRepository.save(employee);
+		return employee.getId();
+	}
 }

@@ -1,5 +1,6 @@
 package com.ibm.employee.entity;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -11,8 +12,9 @@ public class Employee {
 	private String id;
 	private String name;
 	@NotNull
+	@Email
 	private String email;
-	private int mobileNumber;
+	private String mobileNumber;
 	@NotNull
 	private ROLE role;
 	
@@ -34,10 +36,10 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(int mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 	public ROLE getRole() {

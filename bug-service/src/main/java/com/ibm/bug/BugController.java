@@ -56,7 +56,12 @@ public class BugController {
 		bug.setId(bugId);
 		bugService.updateBugStatus(bug);	
 	}
-	
+	/**
+	 * 
+	 * @param bug
+	 * @param bindingResult
+	 * @return creates bug
+	 */
 	@PostMapping("/bug")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	String createBug(@RequestBody @Valid Bug bug, BindingResult bindingResult) {
