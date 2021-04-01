@@ -1,26 +1,15 @@
 package com.ibm.bug.entity;
 import java.util.Date;
 
-//import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.springframework.data.annotation.Id;
-
-import com.ibm.bug.PRIORITY;
-import com.ibm.bug.STATUS;
-import com.ibm.bug.TYPE;
-
-import java.util.Date;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 import org.springframework.data.annotation.Id;
 
+import com.ibm.bug.PRIORITY;
 import com.ibm.bug.STATUS;
 import com.ibm.bug.TYPE;
-import com.ibm.bug.PRIORITY;
 
 public class Bug {
 	@Id
@@ -35,7 +24,7 @@ public class Bug {
 	@NotNull
 	@NotBlank
 	private String projectId;
-	private Date submitOn;
+	private Date submitOnDate;
 	private String module;
 	@NotBlank
 	@NotNull
@@ -85,10 +74,10 @@ public class Bug {
 		this.projectId = projectId;
 	}
 	public Date getSubmitOn() {
-		return submitOn;
+		return submitOnDate;
 	}
 	public void setSubmitOn(Date submitOn) {
-		this.submitOn = submitOn;
+		this.submitOnDate = submitOn;
 	}
 	public String getModule() {
 		return module;
