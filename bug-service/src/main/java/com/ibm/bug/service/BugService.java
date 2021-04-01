@@ -35,13 +35,22 @@ public class BugService {
 	public Optional<Bug> getBug(String bugId) {
 		return bugRepository.findById(bugId);
 	}
+	
 	public void updateBugStatus(@Valid Bug bug) {
 		 bugRepository.save(bug);
 		
 	}
-	public String createProject(@Valid Bug bug) {
+	public String createBug(@Valid Bug bug) {
 		Bug savedBug=bugRepository.save(bug);
 		return bug.getId();
+	}
+
+	public BugRepository getBugRepository() {
+		return bugRepository;
+	}
+
+	public void setBugRepository(BugRepository bugRepository) {
+		this.bugRepository = bugRepository;
 	}
 
 }
