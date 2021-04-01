@@ -17,11 +17,21 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
+	/**
+	 * method to get details of all the employees
+	 * @return employees details 
+	 */
 	@GetMapping("/employee")
 	List<Employee> getEmployees() {
 		return employeeService.getEmployees();
 
 	}
+	
+	/**
+	 * method to get details of specific employee
+	 * @param employeeId
+	 * @return zero or matching employee 
+	 */
 	
 	@GetMapping("/employee/{id}")
 	Optional<Employee> getBug(@PathVariable("id") String employeeId) {

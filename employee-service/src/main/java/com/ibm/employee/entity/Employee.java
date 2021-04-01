@@ -12,7 +12,7 @@ public class Employee {
 	private String name;
 	@NotNull
 	private String email;
-	private int mobileNumber;
+	private String mobileNumber;
 	@NotNull
 	private ROLE role;
 	
@@ -34,10 +34,10 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(int mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 	public ROLE getRole() {
