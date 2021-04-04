@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ibm.bug.entity.Bug;
 import com.ibm.bug.service.BugService;
 
-
+// This deals with the frontend part
 @RestController
 public class BugController {
 	@Autowired
