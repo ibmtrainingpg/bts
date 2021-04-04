@@ -1,5 +1,6 @@
 package com.ibm.bug.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,8 +17,14 @@ public class DummyBugRepository implements BugRepository {
 
 	@Override
 	public List<Bug> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Bug> bugs = new ArrayList<Bug>();
+		Bug bug = new Bug();
+		Bug bug1 = new Bug();
+		bug.setId("24398t84gb32oi");
+		bugs.add(bug);
+		bug1.setId("24398t84gb32oi");
+		bugs.add(bug1);
+		return bugs ;
 	}
 
 	@Override
@@ -58,7 +65,6 @@ public class DummyBugRepository implements BugRepository {
 
 	@Override
 	public Page<Bug> findAll(Pageable arg0) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -105,14 +111,16 @@ public class DummyBugRepository implements BugRepository {
 	}
 
 	@Override
-	public Optional<Bug> findById(String arg0) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Bug> findById(String bugId) {
+		Bug testBug = new Bug();
+		testBug.setId(bugId);
+		return Optional.of(testBug);
 	}
 
 	@Override
 	public Bug save(Bug bug) {
 		bug.setId("24398t84gb32oi");
+		
 		bug.setStatus(STATUS.VERIFIED);
 		return bug;
 	}
