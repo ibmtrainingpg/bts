@@ -20,6 +20,7 @@ import com.ibm.bug.entity.Bug;
 import com.ibm.bug.service.BugService;
 
 // This deals with the frontend part
+//Jenkins test Comment
 @RestController
 public class BugController {
 	@Autowired
