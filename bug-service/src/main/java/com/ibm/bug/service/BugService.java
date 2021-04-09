@@ -2,7 +2,6 @@ package com.ibm.bug.service;
 
 import java.util.List;
 import java.util.Optional;
-import javax.net.ssl.SSLEngineResult.Status;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,11 +46,13 @@ public class BugService {
 		return bug.getStatus();
 		
 	}
+	
 	public String createBug(@Valid Bug bug) {
-		Bug savedBug=bugRepository.save(bug);
+		bugRepository.save(bug);
 		return bug.getId();
 	}
 
+	//For purpose of JUNIT testing
 	public BugRepository getBugRepository() {
 		return bugRepository;
 	}
