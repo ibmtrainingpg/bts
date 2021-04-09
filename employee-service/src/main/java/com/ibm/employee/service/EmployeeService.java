@@ -18,8 +18,7 @@ public class EmployeeService {
 
 	public void updateEmployeeDetails(@Valid Employee employee) {
 		employeeRepository.save(employee);
-	}
-	
+		}
 	/**
 	 * 
 	 * @param employee
