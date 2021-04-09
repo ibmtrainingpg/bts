@@ -1,3 +1,6 @@
+console.log("js loaded");
+
+
 function saveBug() {
     function success(response) {
         console.log(response);
@@ -35,4 +38,5 @@ function saveBug() {
         console.log(data);
     })
     promise.catch(errorHandler);
+
 }
