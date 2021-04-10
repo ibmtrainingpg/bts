@@ -26,7 +26,7 @@ function saveBug() {
             status: document.getElementById('status').value,
             priority: document.getElementById('priority').value,
             type: document.getElementById('type').value,
-            submitOnDate: document.getElementById('submitOnDate').value,
+            submitOnDate: document.getElementById('submitOnDate').valueAsDate,
             buildVersion: document.getElementById('buildVersion').value,
             projectId: document.getElementById('projectId').value,
             module: document.getElementById('module').value,
@@ -83,7 +83,7 @@ function getBugs() {
                 row.appendChild(buildVersionColumn);
                 row.appendChild(projectIdColumn);
                 row.appendChild(moduleColumn);
-                row.appendChild(projectIdColumn);
+                row.appendChild(productColumn);
                 table.appendChild(row);
             }
         })
@@ -91,14 +91,14 @@ function getBugs() {
 
 //====================GetBugsById=====================================
 function getBug() {
-    let id = document.getElementById('bugId');
+    let id = document.getElementById('bugId').value;
     const promise = fetch('/bug/' + id);
     promise.then(function (response) {
         return response.json();
     })
         .then(function (bug) {
             console.log(bug);
-            const table = document.getElementById('bugTable');
+            const table = document.getElementById('bugsTable');
             const row = document.createElement('tr');
             const titleColumn = document.createElement('td');
             const descriptionColumn = document.createElement('td');
@@ -130,8 +130,68 @@ function getBug() {
             row.appendChild(buildVersionColumn);
             row.appendChild(projectIdColumn);
             row.appendChild(moduleColumn);
-            row.appendChild(projectIdColumn);
+            row.appendChild(productColumn);
             table.appendChild(row);
         })
 }
 
+//===============================UpdateBug====================================
+function updateBug() {
+    function success(response) {
+        console.log(response);
+        return response.json();
+    }
+    function errorHandler(error) {
+        console.log(error);
+    }
+    //Form Validation
+    //updateBug is the id of updateBug form
+    const updateBug = document.getElementById('updateBug');
+    if (!updateBug.checkValidity()) {
+        alert('form is invalid');
+        return;
+    }
+
+    let id = document.getElementById('bugId').value;
+
+    // const promise1 = fetch('/bug/' + id, {
+    //     method: 'GET',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         projectId: document.getElementById('projectId').value,
+    //         priority: document.getElementById('priority').value,
+    //         title: document.getElementById('title').value,
+    //         type: document.getElementById('type').value
+
+    //     })
+
+    // });
+
+    // promise1.then(success);
+    // promise1.then(function (data) {
+    //     console.log(data);
+    // })
+    // promise1.catch(errorHandler);
+
+
+    const promise = fetch(('/bug/' + id), {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            status: document.getElementById('status').value,
+            description: document.getElementById('description').value,
+            title: document.getElementById('title').value,
+            submitOnDate: document.getElementById('submitOnDate').value
+        })
+    });
+
+    promise.then(success);
+    promise.then(function (data) {
+        console.log(data);
+    })
+    promise.catch(errorHandler);
+}
