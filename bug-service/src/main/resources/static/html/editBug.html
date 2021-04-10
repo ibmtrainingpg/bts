@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/editBug.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Edit Bug</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Bug Tracking System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../html/createBug.html">Create Bug <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../html/searchBug.html">Search Bug <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="aboutUs.html">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="helpUs.html">Contact Us<span class="sr-only">(current)</span></a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <form class="jumbotron" id="editBug">
+            <div>
+                <div class="form-group row">
+                    <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug ID</label>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Enter Bug ID" id="bugId" required>
+                    </div>
+
+                    <label for="colFormLabelLg" class="col-lg-2 col-form-label">Title</label>
+
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Enter Title in less than 200 characters"
+                            id="title" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="form-group row">
+                    <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Status</label>
+
+                    <div class="col">
+                        <select class="custom-select custom-select-md" id="status" required>
+                            <option value="" disabled selected>Select Option</option>
+                            <option>OPEN</option>
+                            <option>CLOSED</option>
+                            <option>VERIFIED</option>
+                            <option>NEED_MORE_INFO</option>
+                            <option>COULDNT_REPRODUCE</option>
+                            <option>FIXED</option>
+                            <option>PENDING RETEST</option>
+                            <option>ASSIGNED</option>
+                            <option>RETEST</option>
+                            <option>NOT A BUG</option>
+                        </select>
+                    </div>
+
+                    <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
+
+                    <div class="col">
+                        <input class="custom-select custom-select-md " type="date" id="submitOnDate" required>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Comments</label>
+
+
+                <div class="col">
+                    <textarea minlength="5" maxlength="200" class="form-control"
+                        placeholder="Please type your comment in less than 200 characters" id="comments"
+                        required></textarea>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="button" class="btn btn-outline-primary form-control" onclick="editBug()">Update</button>
+            </div>
+
+
+            <p style="margin-top:30px">
+                <span class="required control-label"></span>Required field
+              </p>
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+    </form>
+
+    <footer class="page-footer font-small blue">
+
+        <div class="footer-copyright text-center py-3"><small>© 2021 Copyright: CODE404</small>
+
+        </div>
+
+    </footer>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</html>
