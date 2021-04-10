@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="../css/editBug.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <script src="../js/api.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -35,10 +36,10 @@
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="aboutUs.html">About Us <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../html/aboutUs.html">About Us <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="helpUs.html">Contact Us<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../html/helpUs.html">Contact Us<span class="sr-only">(current)</span></a>
                 </li>
 
 
@@ -49,72 +50,72 @@
 
 
 
-    <form class="jumbotron" id="editBug">
-            <div>
-                <div class="form-group row">
-                    <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug ID</label>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Enter Bug ID" id="bugId" required>
-                    </div>
-
-                    <label for="colFormLabelLg" class="col-lg-2 col-form-label">Title</label>
-
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Enter Title in less than 200 characters"
-                            id="title" required>
-                    </div>
-                </div>
-
-            </div>
-
-            <div>
-                <div class="form-group row">
-                    <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Status</label>
-
-                    <div class="col">
-                        <select class="custom-select custom-select-md" id="status" required>
-                            <option value="" disabled selected>Select Option</option>
-                            <option>OPEN</option>
-                            <option>CLOSED</option>
-                            <option>VERIFIED</option>
-                            <option>NEED_MORE_INFO</option>
-                            <option>COULDNT_REPRODUCE</option>
-                            <option>FIXED</option>
-                            <option>PENDING RETEST</option>
-                            <option>ASSIGNED</option>
-                            <option>RETEST</option>
-                            <option>NOT A BUG</option>
-                        </select>
-                    </div>
-
-                    <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
-
-                    <div class="col">
-                        <input class="custom-select custom-select-md " type="date" id="submitOnDate" required>
-                    </div>
-
-                </div>
-            </div>
-
+    <form class="jumbotron" id="updateBug">
+        <div>
             <div class="form-group row">
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Comments</label>
+                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug ID</label>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Enter Bug ID" id="bugId" required>
+                </div>
 
+                <label for="colFormLabelLg" class="col-lg-2 col-form-label">Title</label>
 
                 <div class="col">
-                    <textarea minlength="5" maxlength="200" class="form-control"
-                        placeholder="Please type your comment in less than 200 characters" id="comments"
-                        required></textarea>
+                    <input type="text" class="form-control" placeholder="Enter Title in less than 200 characters"
+                        id="title" required>
                 </div>
             </div>
 
-            <div class="text-center">
-                <button type="button" class="btn btn-outline-primary form-control" onclick="editBug()">Update</button>
+        </div>
+
+        <div>
+            <div class="form-group row">
+                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Status</label>
+
+                <div class="col">
+                    <select class="custom-select custom-select-md" id="status" required>
+                        <option value="" disabled selected>Select Option</option>
+                        <option>OPEN</option>
+                        <option>CLOSED</option>
+                        <option>VERIFIED</option>
+                        <option>NEED_MORE_INFO</option>
+                        <option>COULDNT_REPRODUCE</option>
+                        <option>FIXED</option>
+                        <option>PENDING RETEST</option>
+                        <option>ASSIGNED</option>
+                        <option>RETEST</option>
+                        <option>NOT A BUG</option>
+                    </select>
+                </div>
+
+                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
+
+                <div class="col">
+                    <input class="custom-select custom-select-md " type="date" id="submitOnDate" required>
+                </div>
+
             </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Description</label>
 
 
-            <p style="margin-top:30px">
-                <span class="required control-label"></span>Required field
-              </p>
+            <div class="col">
+                <textarea minlength="5" maxlength="1000" class="form-control"
+                    placeholder="Please type your comment in less than 1000 characters" id="description"
+                    required></textarea>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-outline-primary form-control" onclick="updateBug()">Update</button>
+        </div>
+
+
+        <p style="margin-top:30px">
+            <span class="required control-label"></span>Required field
+        </p>
 
 
 
@@ -122,7 +123,7 @@
 
 
 
-        
+
 
 
 
