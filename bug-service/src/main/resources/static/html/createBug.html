@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../js/api.js"></script>
-    <link href="../css/createBug.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
 
 
 
@@ -23,7 +23,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Bug Tracking System</a>
+        <a class="navbar-brand" href="../index.html">Bug Tracking System</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -59,13 +59,15 @@
 
 
                 <div class="col">
-                    <textarea minlength="5"  maxlength="200" class="form-control" placeholder="Title in less than 200 characters" id="title" required></textarea>
+                    <textarea minlength="5" maxlength="200" class="form-control"
+                        placeholder="Title in less than 200 characters" id="title" required></textarea>
                 </div>
 
                 <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Description</label>
 
                 <div class="col">
-                    <textarea  maxlength="1000" class="form-control" placeholder="Describe in less than 1000 characters" id="description" required></textarea>
+                    <textarea maxlength="1000" class="form-control" placeholder="Describe in less than 1000 characters"
+                        id="description" required></textarea>
                 </div>
 
             </div>
@@ -129,8 +131,7 @@
                 <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
 
                 <div class="col">
-                    <input class="custom-select custom-select-md " type="date"  id="submitOnDate"
-                        required>
+                    <input class="custom-select custom-select-md " type="date" id="submitOnDate" required>
                 </div>
 
             </div>
@@ -169,13 +170,13 @@
         </div>
 
         <div class="text-center">
-        <button type="button" class="btn btn-outline-primary form-control" onclick="saveBug()">Create</button>
+            <button type="button" class="btn btn-outline-primary form-control" onclick="saveBug()">Create</button>
         </div>
 
 
         <p style="margin-top:30px">
             <span class="required control-label"></span>Required field
-          </p>
+        </p>
 
 
     </form>

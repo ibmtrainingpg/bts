@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../js/api.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -17,24 +18,21 @@
 
 
     <style>
+        @media only screen and (max-width: 768px) {
 
-
-
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-sm-6"] {
-      padding-top: 5%;
-    width: 100%;
-  }
-}
+            /* For mobile phones: */
+            [class*="col-sm-6"] {
+                padding-top: 5%;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Bug Tracking System</a>
+        <a class="navbar-brand" href="../index.html">Bug Tracking System</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -70,7 +68,7 @@
                 <input type="text" class="form-control" placeholder="Enter Bug Id" id="bugId" required>
             </div>
 
-            <div class="col-sm-6"  >
+            <div class="col-sm-6">
                 <button type="button" class="btn btn-outline-primary form-control " onclick="getBug()">Get Bug</button>
 
             </div>
@@ -80,29 +78,29 @@
             <button type="button" class="btn btn-outline-primary form-control" onclick="getBugs()">Get all Bugs</button>
         </div>
 
-<div  class="table-responsive">
-        <table class=" table table-bordered " style="border: 2px solid #000000; margin-top:50px" >
-            <thead >
-                
-                <td scope="col"  style="border: 2px solid #000000;" >  Title </td>
-                <td scope="col"  style="border: 2px solid #000000;"> Description </td>
-                <td scope="col"  style="border: 2px solid #000000;"> Status </td>
-                <td scope="col"  style="border: 2px solid #000000;"> Priority </td>
-                <td scope="col"  style="border: 2px solid #000000;">Type </td>
-                <td scope="col"  style="border: 2px solid #000000;">Submitted On </td>
-                <td scope="col"  style="border: 2px solid #000000;"> Build Version</td>
-                <td scope="col"  style="border: 2px solid #000000;"> Project ID</td>
-                <td scope="col"  style="border: 2px solid #000000;">Module</td>
-                <td scope="col"  style="border: 2px solid #000000;">Product</td>
-                
+        <div class="table-responsive">
+            <table class=" table table-bordered " style="border: 2px solid #000000; margin-top:50px">
+                <thead>
 
-            </thead>
-            <tbody id="bugsTable" style="border: 2px solid #000000">
+                    <td scope="col" style="border: 2px solid #000000;"> Title </td>
+                    <td scope="col" style="border: 2px solid #000000;"> Description </td>
+                    <td scope="col" style="border: 2px solid #000000;"> Status </td>
+                    <td scope="col" style="border: 2px solid #000000;"> Priority </td>
+                    <td scope="col" style="border: 2px solid #000000;">Type </td>
+                    <td scope="col" style="border: 2px solid #000000;">Submitted On </td>
+                    <td scope="col" style="border: 2px solid #000000;"> Build Version</td>
+                    <td scope="col" style="border: 2px solid #000000;"> Project ID</td>
+                    <td scope="col" style="border: 2px solid #000000;">Module</td>
+                    <td scope="col" style="border: 2px solid #000000;">Product</td>
 
 
-            </tbody>
+                </thead>
+                <tbody id="bugsTable" style="border: 2px solid #000000">
 
-        </table>
+
+                </tbody>
+
+            </table>
         </div>
 
     </form>

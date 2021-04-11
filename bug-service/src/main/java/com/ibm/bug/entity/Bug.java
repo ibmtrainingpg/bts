@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 
 import com.ibm.bug.PRIORITY;
@@ -14,16 +15,17 @@ import com.ibm.bug.TYPE;
 public class Bug {
 	@Id
 	private String id;
-	@NotNull
+//	@NotNull
 	private PRIORITY priority;
-	@NotNull
+//	@NotNull
 	private TYPE type;
 	@NotNull
 	private STATUS status;
 	private String buildVersion;
-	@NotNull
-	@NotBlank
+//	@NotNull
+//	@NotBlank
 	private String projectId;
+	@CreatedDate
 	private Date submitOnDate;
 	private String module;
 	@NotBlank
