@@ -185,7 +185,7 @@ function updateBug() {
             status: document.getElementById('status').value,
             description: document.getElementById('description').value,
             title: document.getElementById('title').value,
-            submitOnDate: document.getElementById('submitOnDate').value
+            submitOnDate: document.getElementById('submitOnDate').valueAsDate
         })
     });
 
