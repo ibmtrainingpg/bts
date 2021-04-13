@@ -28,7 +28,7 @@ class EmployeeServiceTest {
 	 * method to test the createEmployee method
 	 */
 	@Test
-	void testCreateBug() {
+	void testCreateEmployee() {
 		String employeeId = employeeService.createEmployee(employee);
 		assertNotNull(employeeId);
 	}
@@ -37,7 +37,7 @@ class EmployeeServiceTest {
 	 * method to test the getEmployees method
 	 */
 	@Test
-	void testGetBugs() {
+	void testGetEmployees() {
 		List<Employee> employeeList = employeeService.getEmployees();
 		assertNotNull(employeeList);
 		assertEquals("23dfgh567i", employeeList.get(0).getId());
@@ -47,7 +47,7 @@ class EmployeeServiceTest {
 	 * method to test the getEmployee method
 	 */
 	@Test
-	void testGetBugById() {
+	void testGetEmployeeById() {
 		Optional<Employee> employee1 = employeeService.getEmployee("23dfgh567i");
 		assertNotNull(employee1);
 	}

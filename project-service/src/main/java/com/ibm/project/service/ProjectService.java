@@ -17,6 +17,8 @@ public class ProjectService {
 	ProjectRepository projectRepository;
 
 
+	
+
 	public void updateProject(@Valid Project project) {
 		projectRepository.save(project);
 	}
@@ -32,6 +34,14 @@ public class ProjectService {
 	public String createProject(Project project) {
 		Project savedProject=projectRepository.save(project);
 		return project.getId();
+	}
+	
+	public ProjectRepository getProjectRepository() {
+		return projectRepository;
+	}
+
+	public void setProjectRepository(ProjectRepository projectRepository) {
+		this.projectRepository = projectRepository;
 	}
 
 }
