@@ -1,13 +1,16 @@
 package com.ibm.employee.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import com.ibm.employee.ROLE;
 import com.ibm.employee.entity.Employee;
 import com.ibm.employee.repo.EmployeeRepository;
 
@@ -15,8 +18,14 @@ public class DummyEmployeeRepository implements EmployeeRepository {
 
 	@Override
 	public List<Employee> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Employee> employees = new ArrayList<Employee>();
+		Employee employee = new Employee();
+		Employee employee1 = new Employee();
+		employee.setId("23dfgh567i");
+		employees.add(employee);
+		employee1.setId("24398t84gb32oi");
+		employees.add(employee1);
+		return employees ;
 	}
 
 	@Override
@@ -105,13 +114,17 @@ public class DummyEmployeeRepository implements EmployeeRepository {
 
 	@Override
 	public Optional<Employee> findById(String employeeId) {
-		return null;
+		Employee testEmployee = new Employee();
+		testEmployee.setId(employeeId);
+		return Optional.of(testEmployee);
 	}
 
 	@Override
-	public <S extends Employee> S save(S arg0) {
-		// TODO Auto-generated method stub
-		return null;
+	public Employee save(Employee employee) {
+		employee.setId("23dfgh567i");
+		employee.setName("Ram");
+		employee.setRole(ROLE.DEVELOPER);
+		return employee;
 	}
 
 	@Override
