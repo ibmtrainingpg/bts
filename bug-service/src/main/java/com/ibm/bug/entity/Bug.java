@@ -1,4 +1,6 @@
 package com.ibm.bug.entity;
+
+
 import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
@@ -37,14 +39,20 @@ public class Bug {
 	@Size(min = 5, max = 200, message = "Should be between 5 and 200 characters")
 	private String title;
 	private String product;
+	
+	
 	private Date etaDate;
+	
+	
+	
 	
 	public Date getEtaDate() {
 		return etaDate;
 	}
 	public void setEtaDate(Date etaDate) {
+		
 		if(etaDate.compareTo(new Date())<0) {
-			throw new IllegalArgumentException("ETA date should not be a past date");
+			throw new IllegalArgumentException("ETA shouldnt be a past date");
 		}
 		this.etaDate = etaDate;
 	}
