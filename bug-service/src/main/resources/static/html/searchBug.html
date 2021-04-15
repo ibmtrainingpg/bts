@@ -49,40 +49,22 @@
     </nav>
 
 
-
     <form class="jumbotron required" id="searchBug">
         <div class="form-group row">
             <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug ID</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" placeholder="Enter Bug Id" id="bugId" required>
             </div>
-            <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">ETA</label>
 
-            <div class="col">
-                <input class="custom-select custom-select-md " type="date" id="submitOnDate" required>
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-outline-primary form-control " onclick="getBug()">Get Bug</button>
+
             </div>
-
-
-
         </div>
 
-        <div class="form-group-row">
-            
-            
-                <button type="button" class="btn btn-outline-primary col-sm-5 form-control" onclick="getBug()">Get Bug</button>
-            
-            
-                <button type="button" class="btn btn-outline-primary col-sm-5 form-control"  style="margin-left:30px;" onclick="getBugs()">Get all
-                    Bugs</button>
-                    </div>
-            
-
-
+        <div class="text-center " style="margin-top:50px">
+            <button type="button" class="btn btn-outline-primary form-control" onclick="getBugs()">Get all Bugs</button>
         </div>
-
-
-
-
 
         <div class="table-responsive">
             <table class=" table table-bordered " style="border: 2px solid #000000; margin-top:50px">
@@ -98,6 +80,7 @@
                     <td scope="col" style="border: 2px solid #000000;"> Project ID</td>
                     <td scope="col" style="border: 2px solid #000000;">Module</td>
                     <td scope="col" style="border: 2px solid #000000;">Product</td>
+                    <td scope="col" style="border: 2px solid #000000;">ETA</td>
 
 
                 </thead>
