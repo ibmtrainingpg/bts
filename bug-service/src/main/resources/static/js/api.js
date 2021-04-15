@@ -1,18 +1,21 @@
 console.log("js loaded");
 
+function success(response) {
+    if (!response.ok) {
+        alert("Input valid details");
+        return;
+    }
+    console.log(response);
+    return response.json();
+}
+function errorHandler(error) {
+    console.log(error);
+}
+
 
 function saveBug() {
-    function success(response) {
-        if (!response.ok) {
-            alert("Input valid details");
-            return;
-        }
-        console.log(response);
-        return response.json();
-    }
-    function errorHandler(error) {
-        console.log(error);
-    }
+    
+
     const createBug = document.getElementById('createBug');
 
     if (!createBug.checkValidity()) {
@@ -35,7 +38,7 @@ function saveBug() {
             projectId: document.getElementById('projectId').value,
             module: document.getElementById('module').value,
             product: document.getElementById('product').value,
-            etaDate: document.getElementById('etaDate').value,
+            etaDate: document.getElementById('etaDate').value
         })
     });
     promise.then(success);
@@ -150,17 +153,6 @@ function getBug() {
 
 //===============================UpdateBug====================================
 function updateBug() {
-    function success(response) {
-        if (!response.ok) {
-            alert("Input valid details");
-            return;
-        }
-        console.log(response);
-        return response.json();
-    }
-    function errorHandler(error) {
-        console.log(error);
-    }
     //Form Validation
     //updateBug is the id of updateBug form
     const updateBug = document.getElementById('updateBug');
@@ -171,27 +163,6 @@ function updateBug() {
 
     let id = document.getElementById('bugId').value;
 
-    // const promise1 = fetch('/bug/' + id, {
-    //     method: 'GET',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         // projectId: document.getElementById('projectId').value,
-    //         // priority: document.getElementById('priority').value,
-    //         // title: document.getElementById('title').value,
-    //         status: document.getElementById('status').value
-
-    //     })
-
-    // });
-
-    // promise1.then(success);
-    // promise1.then(function (data) {
-    //     console.log(data);
-    // })
-    // promise1.catch(errorHandler);
-
 
     const promise = fetch(('/bug/' + id), {
         method: 'PUT',
@@ -199,10 +170,17 @@ function updateBug() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            status: document.getElementById('status').value,
-            description: document.getElementById('description').value,
             title: document.getElementById('title').value,
-            submitOnDate: document.getElementById('submitOnDate').valueAsDate
+            description: document.getElementById('description').value,
+            status: document.getElementById('status').value,
+            priority: document.getElementById('priority').value,
+            type: document.getElementById('type').value,
+            submitOnDate: document.getElementById('submitOnDate').valueAsDate,
+            buildVersion: document.getElementById('buildVersion').value,
+            projectId: document.getElementById('projectId').value,
+            module: document.getElementById('module').value,
+            product: document.getElementById('product').value,
+            etaDate: document.getElementById('etaDate').value,
         })
     });
 
@@ -211,4 +189,22 @@ function updateBug() {
         console.log(data);
     })
     promise.catch(errorHandler);
+}  
+
+function getStatus() {
+	let id = document.getElementById('bugId').value;
+
+	const promise1 = fetch('/bug/' + id, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	});
+
+	promise1.then(success);
+	promise1.then(function(data) {
+		console.log(data);
+	})
+	promise1.catch(errorHandler);
+
 }

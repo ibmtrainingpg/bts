@@ -50,17 +50,20 @@
 
 	<form class="jumbotron required" id="createBug">
         <div>
+
+
+
+
+
             <div class="form-group row">
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Bug ID</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" placeholder="Enter Bug Id" id="bugId" required>
+              </div>
                 <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Title</label>
                 <div class="col">
                     <textarea minlength="5" maxlength="200" class="form-control"
                         placeholder="Title in less than 200 characters" id="title" required></textarea>
-                </div>
-
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Description</label>
-                <div class="col">
-                    <textarea maxlength="1000" class="form-control" placeholder="Describe in less than 1000 characters"
-                        id="description" required></textarea>
                 </div>
 
             </div>
@@ -69,6 +72,14 @@
 
         <div>
             <div class="form-group row">
+
+
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Description</label>
+                <div class="col">
+                    <textarea maxlength="1000" class="form-control" placeholder="Describe in less than 1000 characters"
+                        id="description" required></textarea>
+				</div>
+				
                 <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Priority</label>
                 <div class="col">
 
@@ -80,7 +91,13 @@
                     </select>
                 </div>
 
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Status</label>
+            </div>
+        </div>
+
+        <div>
+            <div class="form-group row">
+
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Status</label>
 
                 <div class="col">
                     <select class="selectpicker form-control" data-live-search="true" id="status" required>
@@ -102,11 +119,6 @@
                         <option>NEED_MORE_INFORMATION</option>
                     </select>
                 </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="form-group row">
                 <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Type</label>
                 <div class="col">
                     <select class="selectpicker form-control" data-live-search="true" id="type" required>
@@ -118,48 +130,52 @@
 
                 </div>
 
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
-
-                <div class="col">
-                    <input class="custom-select custom-select-md " type="date" id="submitOnDate" disabled>
-                </div>
+               
 
             </div>
         </div>
 
         <div>
             <div class="form-group row">
+
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Submitted On</label>
+
+                <div class="col">
+                    <input class="custom-select custom-select-md " type="date" id="submitOnDate" disabled>
+				</div>
+				
                 <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Build Version</label>
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Enter Build Version" id="buildVersion"
                         required>
                 </div>
-
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Project ID</label>
-
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter project ID" id="projectId" required>
-                </div>
             </div>
 
         </div>
 
         <div>
             <div class="form-group row">
+				<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">Project ID</label>
+
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Enter project ID" id="projectId" required>
+				</div>
+				
                 <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Module</label>
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Enter Module" id="module" required>
                 </div>
 
-                <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Product</label>
-
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter Product Type " id="product" required>
-                </div>
+               
             </div>
         </div> 
 
         <div class="form-group row">
+			<label for="colFormLabelLg" class="col-lg-2 col-form-label control-label control-label">Product</label>
+
+			<div class="col">
+				<input type="text" class="form-control" placeholder="Enter Product Type " id="product" required>
+			</div>
             <label for="colFormLabelLg" class="col-lg-2 col-form-label control-label">ETA</label>
 
             <div class="col-sm-4">
@@ -180,7 +196,7 @@
 		
 	</div>
 
-	<footer class="page-footer font-small blue" id="footer">
+	<footer class="page-footer font-small blue">
 
 		<div class="footer-copyright text-center py-3"><small>© 2021 Copyright: CODE404</small>
 
