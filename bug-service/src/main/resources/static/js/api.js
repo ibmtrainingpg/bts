@@ -3,6 +3,10 @@ console.log("js loaded");
 
 function saveBug() {
     function success(response) {
+        if (!response.ok) {
+            alert("Input valid details");
+            return;
+        }
         console.log(response);
         return response.json();
     }
@@ -31,6 +35,7 @@ function saveBug() {
             projectId: document.getElementById('projectId').value,
             module: document.getElementById('module').value,
             product: document.getElementById('product').value,
+            etaDate: document.getElementById('etaDate').value,
         })
     });
     promise.then(success);
@@ -49,6 +54,7 @@ function getBugs() {
         .then(function (bugs) {
             console.log(bugs);
             const table = document.getElementById('bugsTable');
+            table.innerHTML = "";
             for (let index = 0; index < bugs.length; index++) {
                 console.log(bugs[index]);
                 const currentBug = bugs[index];
@@ -63,6 +69,7 @@ function getBugs() {
                 const projectIdColumn = document.createElement('td');
                 const moduleColumn = document.createElement('td');
                 const productColumn = document.createElement('td');
+                const etaDateColumn = document.createElement('td');
 
                 titleColumn.append(currentBug.title);
                 descriptionColumn.append(currentBug.description);
@@ -74,6 +81,7 @@ function getBugs() {
                 projectIdColumn.append(currentBug.projectId);
                 moduleColumn.append(currentBug.module);
                 productColumn.append(currentBug.product);
+                etaDateColumn.append(currentBug.etaDate);
                 row.appendChild(titleColumn);
                 row.appendChild(descriptionColumn);
                 row.appendChild(statusColumn);
@@ -84,6 +92,7 @@ function getBugs() {
                 row.appendChild(projectIdColumn);
                 row.appendChild(moduleColumn);
                 row.appendChild(productColumn);
+                row.appendChild(etaDateColumn);
                 table.appendChild(row);
             }
         })
@@ -99,6 +108,7 @@ function getBug() {
         .then(function (bug) {
             console.log(bug);
             const table = document.getElementById('bugsTable');
+            table.innerHTML = "";
             const row = document.createElement('tr');
             const titleColumn = document.createElement('td');
             const descriptionColumn = document.createElement('td');
@@ -110,6 +120,7 @@ function getBug() {
             const projectIdColumn = document.createElement('td');
             const moduleColumn = document.createElement('td');
             const productColumn = document.createElement('td');
+            const etaDateColumn = document.createElement('td');
 
             titleColumn.append(bug.title);
             descriptionColumn.append(bug.description);
@@ -121,6 +132,7 @@ function getBug() {
             projectIdColumn.append(bug.projectId);
             moduleColumn.append(bug.module);
             productColumn.append(bug.product);
+            etaDateColumn.append(bug.etaDate);
             row.appendChild(titleColumn);
             row.appendChild(descriptionColumn);
             row.appendChild(statusColumn);
@@ -131,6 +143,7 @@ function getBug() {
             row.appendChild(projectIdColumn);
             row.appendChild(moduleColumn);
             row.appendChild(productColumn);
+            row.appendChild(etaDateColumn);
             table.appendChild(row);
         })
 }
@@ -138,6 +151,10 @@ function getBug() {
 //===============================UpdateBug====================================
 function updateBug() {
     function success(response) {
+        if (!response.ok) {
+            alert("Input valid details");
+            return;
+        }
         console.log(response);
         return response.json();
     }
@@ -160,10 +177,10 @@ function updateBug() {
     //         'Content-Type': 'application/json'
     //     },
     //     body: JSON.stringify({
-    //         projectId: document.getElementById('projectId').value,
-    //         priority: document.getElementById('priority').value,
-    //         title: document.getElementById('title').value,
-    //         type: document.getElementById('type').value
+    //         // projectId: document.getElementById('projectId').value,
+    //         // priority: document.getElementById('priority').value,
+    //         // title: document.getElementById('title').value,
+    //         status: document.getElementById('status').value
 
     //     })
 
