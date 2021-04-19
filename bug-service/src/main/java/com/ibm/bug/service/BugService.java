@@ -160,4 +160,9 @@ public class BugService {
 		this.bugRepository = bugRepository;
 	}
 
+	public Optional<Bug> getBugByName(String bugTitle) {
+		return bugRepository.findByName(bugTitle);
+	}
+
+
 }
