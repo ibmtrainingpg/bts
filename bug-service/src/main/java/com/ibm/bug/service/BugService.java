@@ -164,5 +164,9 @@ public class BugService {
 		return bugRepository.findByName(bugTitle);
 	}
 
+	public List<Bug> getBugByStatus(STATUS bugStatus) {
+		return bugRepository.findByStatus(bugStatus);
+	}
+
 
 }
