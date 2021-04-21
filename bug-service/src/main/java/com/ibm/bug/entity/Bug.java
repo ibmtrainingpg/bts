@@ -17,18 +17,22 @@ import com.ibm.bug.TYPE;
 public class Bug {
 	@Id
 	private String id;
-//	@NotNull
+	@NotNull
 	private PRIORITY priority;
-//	@NotNull
+	@NotNull
 	private TYPE type;
 	@NotNull
 	private STATUS status;
+	@NotNull
+	@NotBlank
 	private String buildVersion;
-//	@NotNull
-//	@NotBlank
+	@NotNull
+	@NotBlank
 	private String projectId;
 	@CreatedDate
 	private Date submitOnDate;
+	@NotNull
+	@NotBlank
 	private String module;
 	@NotBlank
 	@NotNull
@@ -38,14 +42,12 @@ public class Bug {
 	@NotNull
 	@Size(min = 5, max = 200, message = "Should be between 5 and 200 characters")
 	private String title;
+	@NotNull
+	@NotBlank
 	private String product;
-	
-	
+	@NotNull
 	private Date etaDate;
-	
-	
-	
-	
+
 	public Date getEtaDate() {
 		return etaDate;
 	}
