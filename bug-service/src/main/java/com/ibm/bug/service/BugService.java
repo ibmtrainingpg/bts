@@ -168,5 +168,9 @@ public class BugService {
 		return bugRepository.findByStatus(bugStatus);
 	}
 
+	public List<Bug> getBugByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
+	}
+
 
 }
