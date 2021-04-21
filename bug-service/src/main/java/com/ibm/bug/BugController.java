@@ -5,9 +5,11 @@ import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.codec.multipart.PartHttpMessageWriter;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,7 +62,10 @@ public class BugController {
 		return bugService.getBugByStatus(bugStatus);
 	}
 	
-	
+	@GetMapping("/bug/search")
+	List<Bug> getBugByStatusAndName(@PathParam("status") STATUS bugStatus, @PathParam("title") String bugTitle) {
+		return bugService.getBugByStatusAndTitle(bugStatus,bugTitle);
+	}
 	
 	@PutMapping("/bug/{id}")
 	void updateBugStatus(@RequestBody @Valid Bug bug, BindingResult bindingResult,@PathVariable("id") String bugId ) {
