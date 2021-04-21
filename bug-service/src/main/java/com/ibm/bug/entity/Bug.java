@@ -34,18 +34,25 @@ public class Bug {
 	@NotNull
 	@Size(min = 5, max = 1000, message = "Should be between 5 and 1000 characters")
 	private String description;
-	@NotBlank
-	@NotNull
+//	@NotBlank
+//	@NotNull
 	@Size(min = 5, max = 200, message = "Should be between 5 and 200 characters")
 	private String title;
 	private String product;
 	
 	
 	private Date etaDate;
+	private Integer timeRequired;
 	
 	
 	
 	
+	public Integer getTimeRequired() {
+		return timeRequired;
+	}
+	public void setTimeRequired(Integer timeRequired) {
+		this.timeRequired = timeRequired;
+	}
 	public Date getEtaDate() {
 		return etaDate;
 	}
