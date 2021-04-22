@@ -160,8 +160,8 @@ public class BugService {
 		this.bugRepository = bugRepository;
 	}
 
-	public List<Bug> getBugByName(String bugTitle) {
-		return bugRepository.findByTitleIgnoreCase(bugTitle);
+	public Optional<Bug> getBugByTitle(String bugTitle) {
+		return bugRepository.findByTitle(bugTitle);
 	}
 
 	public List<Bug> getBugByStatus(STATUS bugStatus) {
