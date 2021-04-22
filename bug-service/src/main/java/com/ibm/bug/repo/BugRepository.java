@@ -15,6 +15,8 @@ public interface BugRepository extends MongoRepository<Bug, String> {
 	Optional<Bug> findByName(String bugTitle);
 
 	List<Bug> findByStatus(STATUS bugStatus);
-	@Query("{'title':?0}")
 	List<Bug> findByStatusAndTitle(STATUS bugStatus,String bugTitle);
+
+	
+
 }
