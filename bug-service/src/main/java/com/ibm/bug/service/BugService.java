@@ -167,6 +167,14 @@ public class BugService {
 	public List<Bug> getBugByStatus(STATUS bugStatus) {
 		return bugRepository.findByStatus(bugStatus);
 	}
+	
+	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
+	}
+	
+	public void deleteBug(String bugId) {
+		bugRepository.deleteById(bugId);
+	}
 
 
 }

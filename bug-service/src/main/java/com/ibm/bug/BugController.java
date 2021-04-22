@@ -3,8 +3,10 @@ package com.ibm.bug;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -60,6 +62,11 @@ public class BugController {
 		return bugService.getBugByStatus(bugStatus);
 	}
 	
+	@GetMapping("/bug/search")
+	List<Bug> findByStatusAndTitle(@PathParam("status") STATUS bugStatus, @PathParam("title") String bugTitle) {
+		return bugService.findByStatusAndTitle(bugStatus, bugTitle);
+	}
+	
 	
 	
 	@PutMapping("/bug/{id}")
@@ -82,6 +89,11 @@ public class BugController {
 		System.out.println(bug);
 		return bugService.createBug(bug);
 
+	}
+	
+	@DeleteMapping("/bug/{id}")
+	void deleteUser(@PathVariable("id") String bugId) {
+		bugService.deleteBug(bugId);
 	}
 
 	private void validateModel(Errors bindingResult) {
