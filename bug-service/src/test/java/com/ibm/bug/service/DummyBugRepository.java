@@ -161,4 +161,10 @@ public class DummyBugRepository implements BugRepository {
 		return null;
 	}
 
+	@Override
+	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

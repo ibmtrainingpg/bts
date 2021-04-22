@@ -176,5 +176,9 @@ public class BugService {
 		bugRepository.deleteById(bugId);
 	}
 
+	public List<Bug> getBugByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
+	}
+
 
 }
