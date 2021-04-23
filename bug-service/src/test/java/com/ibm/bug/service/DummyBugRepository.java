@@ -154,15 +154,39 @@ public class DummyBugRepository implements BugRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
+//commented for partial search and ignoreCase
+//	@Override
+//	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+//	@Override
+//	public List<Bug> findByTitleIgnoreCase(String bugName) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//commented for partial search and ignoreCase
+//	@Override
+//	public Optional<Bug> findByTitle(String bugTitle) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
-	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+	public List<Bug> findByStatusAndTitleIgnoreCase(STATUS bugStatus, String bugTitle) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Bug> findByTitleIgnoreCase(String bugName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bug> findByNameIgnoreCase(String bugName) {
 		// TODO Auto-generated method stub
 		return null;
 	}

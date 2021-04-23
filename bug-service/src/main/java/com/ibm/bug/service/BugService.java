@@ -160,8 +160,8 @@ public class BugService {
 		this.bugRepository = bugRepository;
 	}
 
-	public Optional<Bug> getBugByTitle(String bugTitle) {
-		return bugRepository.findByTitle(bugTitle);
+	public List<Bug> getBugByTitle(String bugTitle) {
+		return bugRepository.findByTitleIgnoreCase(bugTitle);
 	}
 
 	public List<Bug> getBugByStatus(STATUS bugStatus) {
@@ -169,16 +169,20 @@ public class BugService {
 	}
 	
 	public List<Bug> findByStatusAndTitle(STATUS bugStatus, String bugTitle) {
-		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
+		return bugRepository.findByStatusAndTitleIgnoreCase(bugStatus, bugTitle);
 	}
 	
 	public void deleteBug(String bugId) {
 		bugRepository.deleteById(bugId);
 	}
 
-	public List<Bug> getBugByStatusAndTitle(STATUS bugStatus, String bugTitle) {
-		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
+	public List<Bug> getBugByPartialName(String bugName) {
+		return bugRepository.findByNameIgnoreCase(bugName);
 	}
+
+//	public List<Bug> getBugByStatusAndTitle(STATUS bugStatus, String bugTitle) {
+//		return bugRepository.findByStatusAndTitle(bugStatus, bugTitle);
+//	}
 
 
 }

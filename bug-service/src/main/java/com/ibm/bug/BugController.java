@@ -54,7 +54,7 @@ public class BugController {
 //	}
 	
 	@GetMapping("/bug/title/{title}")
-	Optional<Bug> getBugByName(@PathVariable("title") String bugTitle) {
+	List<Bug> getBugByName(@PathVariable("title") String bugTitle) {//Optional<bug>
 		return bugService.getBugByTitle(bugTitle);
 	}
 	
@@ -63,12 +63,15 @@ public class BugController {
 		return bugService.getBugByStatus(bugStatus);
 	}
 	
-	@GetMapping("/bug/search")
-	List<Bug> findByStatusAndTitle(@PathParam("status") STATUS bugStatus, @PathParam("title") String bugTitle) {
+	@GetMapping("/bug/search/{title}/{status}")
+	List<Bug> findByStatusAndTitle(@PathVariable("status") STATUS bugStatus, @PathVariable("title") String bugTitle) {
 		return bugService.findByStatusAndTitle(bugStatus, bugTitle);
 	}
 	
-	
+	@GetMapping("/bug/{name}")
+	List<Bug> getBugByPartialName(@PathVariable("name") String bugName) {
+		return bugService.getBugByPartialName(bugName);
+	}
 	
 	@PutMapping("/bug/{id}")
 	void updateBugStatus(@RequestBody @Valid Bug bug, BindingResult bindingResult,@PathVariable("id") String bugId ) {
