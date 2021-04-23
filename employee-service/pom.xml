@@ -13,7 +13,7 @@
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-demo1</name>
-	<description>project-service</description>
+	<description>employee-service</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
